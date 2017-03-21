@@ -8,8 +8,9 @@
         <h4 class="card-title">{{ job.title }}</h4>
         <p class="card-text">Company: {{ job.advertiser }}</p>
         <p class="card-text">Desc: {{ job.description }}</p>
-        <p class="card-text">Addr: {{ job.addressLocal }}, {{ job.addressRegion }}</p>
+        <p class="card-text">Addr: <span v-if="job.addressLocal">{{ job.addressLocal }},</span> {{ job.addressRegion }}</p>
         <p class="card-text">Type: {{ job.employmentType }}</p>
+        <p class="card-text">Cat: {{ job.category }}</p>
         <p class="card-text">Posted: {{ job.datePosted }}</p>
         <a :href="job.url" class="btn btn-primary" target="_blank">Go</a>
       </div>
